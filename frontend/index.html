@@ -13,19 +13,27 @@
         <div class="controls">
             <div class="control-group">
                 <h2>Manage Keys</h2>
-                <input v-model="newKey" placeholder="Key">
-                <input v-model="newValue" placeholder="Value">
-                <button @click="setKey">Set Key</button>
-                <input v-model="keyToDelete" placeholder="Key to Delete">
-                <button @click="deleteKey">Delete Key</button>
+                <div class="form-group">
+                    <input v-model="newKey" placeholder="Key">
+                    <input v-model="newValue" placeholder="Value">
+                    <button @click="setKey">Set Key</button>
+                </div>
+                <div class="form-group">
+                    <input v-model="keyToDelete" placeholder="Key to Delete">
+                    <button @click="deleteKey">Delete Key</button>
+                </div>
             </div>
 
             <div class="control-group">
                 <h2>Manage Nodes</h2>
-                <input v-model="newNodeName" placeholder="Node Name">
-                <button @click="addNode">Add Node</button>
-                <input v-model="nodeToRemove" placeholder="Node to Remove">
-                <button @click="removeNode">Remove Node</button>
+                <div class="form-group">
+                    <input v-model="newNodeName" placeholder="Node Name">
+                    <button @click="addNode">Add Node</button>
+                </div>
+                <div class="form-group">
+                    <input v-model="nodeToRemove" placeholder="Node to Remove">
+                    <button @click="removeNode">Remove Node</button>
+                </div>
             </div>
         </div>
 
