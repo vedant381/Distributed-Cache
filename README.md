@@ -63,3 +63,56 @@ To remove a node from the cache ring:
 
 ```bash
 curl -X DELETE "http://127.0.0.1:8000/nodes/node2"
+
+## How to run the CLI locally
+
+1.  **Run the main application:**
+    Open a terminal and run the following command to start the distributed cache server:
+    ```bash
+    poetry run uvicorn distributed_cache.main:app --reload
+    ```
+
+2.  **Run CLI commands:**
+    Open a *new* terminal, and activate the virtual environment:
+    ```bash
+    source $(poetry env info --path)/bin/activate
+    ```
+    Now you can run the CLI commands directly.
+
+## CLI Usage
+
+### Set a value
+
+```bash
+cli set mykey myvalue
+```
+
+### Get a value
+
+```bash
+cli get mykey
+```
+
+### Delete a value
+
+```bash
+cli delete mykey
+```
+
+### Add a node
+
+```bash
+cli add-node node3
+```
+
+### Remove a node
+
+```bash
+cli remove-node node2
+```
+
+### List nodes
+
+```bash
+cli list-nodes
+```

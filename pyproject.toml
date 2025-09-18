@@ -10,10 +10,15 @@ requires-python = ">=3.13"
 dependencies = [
     "fastapi",
     "uvicorn[standard]",
+    "typer",
+    "requests",
 ]
 
 [tool.poetry]
 packages = [{include = "distributed_cache", from = "src"}]
+
+[tool.poetry.scripts]
+cli = "distributed_cache.cli:app"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
