@@ -1,0 +1,20 @@
+[project]
+name = "distributed-cache"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "vedant381",email = "vedantthakkar1003@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+]
+
+[tool.poetry]
+packages = [{include = "distributed_cache", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
