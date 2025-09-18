@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distributed Cache Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Distributed Cache Visualizer</h1>
+
+        <div class="controls">
+            <div class="control-group">
+                <h2>Manage Keys</h2>
+                <input v-model="newKey" placeholder="Key">
+                <input v-model="newValue" placeholder="Value">
+                <button @click="setKey">Set Key</button>
+                <input v-model="keyToDelete" placeholder="Key to Delete">
+                <button @click="deleteKey">Delete Key</button>
+            </div>
+
+            <div class="control-group">
+                <h2>Manage Nodes</h2>
+                <input v-model="newNodeName" placeholder="Node Name">
+                <button @click="addNode">Add Node</button>
+                <input v-model="nodeToRemove" placeholder="Node to Remove">
+                <button @click="removeNode">Remove Node</button>
+            </div>
+        </div>
+
+        <h2>Cache State</h2>
+        <div class="nodes-container">
+            <div v-for="node in nodes" class="node">
+                <h3>{{ node.name }}</h3>
+                <ul>
+                    <li v-for="(value, key) in node.data">
+                        <strong>{{ key }}</strong>: {{ value }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="app.js"></script>
+</body>
+</html>
